@@ -3,6 +3,8 @@ package com.sp.oracle;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 
@@ -41,7 +43,7 @@ public class OraclConnector {
 		}
  
 		if (connection != null) {
-			/*String sql = "SELECT * FROM USER_DETAILS";
+			String sql = "SELECT * FROM USER_DETAILS";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
 			ResultSet rs = ps.executeQuery();
@@ -50,7 +52,8 @@ public class OraclConnector {
 				System.out.println(rs.getString("USER_NAME"));
 			}
 			
-			System.out.println("You made it, take control your database now!");*/
+			System.out.println("You made it, take control your database now!");
+			
 			CallableStatement callableStatement = null;
 			String getDBUSERByUserIdSql = "{call test(?,?,?)}";
 			callableStatement = connection.prepareCall(getDBUSERByUserIdSql);
