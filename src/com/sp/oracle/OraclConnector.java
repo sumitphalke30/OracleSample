@@ -11,6 +11,8 @@ import java.sql.Types;
 public class OraclConnector {
 	public static void main(String[] args) throws SQLException {
 		System.out.println("-------- Oracle JDBC Connection Testing ------");
+
+		
 		 
 		try {
  
